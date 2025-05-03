@@ -3,45 +3,40 @@ package com.example.mohomecompass
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.example.mohomecompass.ui.screen.MainScreen
 import com.example.mohomecompass.ui.theme.MohomeCompassTheme
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import com.example.mohomecompass.ui.screen.MapScreen
+import com.example.mohomecompass.ui.screen.ResourceDetailScreen
+import com.example.mohomecompass.ui.screen.ResourcesScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
-            MohomeCompassTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+            MyApp()
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MohomeCompassTheme {
-        Greeting("Android")
+fun MyApp() {
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = "main") {
+        composable("main") { MainScreen(navController) }
+        composable("resources") { ResourcesScreen(navController) }
+        composable("resource_detail/{resourceName}") { backStackEntry ->
+            val resourceName = backStackEntry.arguments?.getString("resourceName")
+            ResourceDetailScreen(resourceName)
+        }
+        composable("map") { MapScreen(navController) }
     }
 }
