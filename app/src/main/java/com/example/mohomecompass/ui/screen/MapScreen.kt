@@ -21,6 +21,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
+import com.example.mohomecompass.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -32,20 +34,20 @@ fun MapScreen(navController: NavController) {
     }
 
     val resourceLocations = listOf(
-        ResourceLocation("Gym", LatLng(42.25899024167556, -72.57077174509314)),
-        ResourceLocation("Dining Hall", LatLng(42.25509306248877, -72.57396918846362)),
-        ResourceLocation("Williston Library", LatLng(42.257418857343175, -72.57529217126427)),
-        ResourceLocation("Registrar's Office", LatLng(42.256650647830064, -72.57569611708819)),
-        ResourceLocation("Career Development Center", LatLng(42.25871269961872, -72.5730286649091)),
-        ResourceLocation("Pratt Library", LatLng(42.253725458017755, -72.57415754906123)),
-        ResourceLocation("Counseling Service", LatLng(42.259079185785374, -72.57281870556443)),
-        ResourceLocation("Health Services Office", LatLng(42.259079185785374, -72.57281870556443)),
-        ResourceLocation("Financial Services Office", LatLng(42.25534214697941, -72.57613072477137))
+        ResourceLocation(stringResource(id = R.string.gym), LatLng(42.25899024167556, -72.57077174509314)),
+        ResourceLocation(stringResource(id = R.string.dining_hall), LatLng(42.25509306248877, -72.57396918846362)),
+        ResourceLocation(stringResource(id = R.string.williston_library), LatLng(42.257418857343175, -72.57529217126427)),
+        ResourceLocation(stringResource(id = R.string.registrars_office), LatLng(42.256650647830064, -72.57569611708819)),
+        ResourceLocation(stringResource(id = R.string.career_development_center), LatLng(42.25871269961872, -72.5730286649091)),
+        ResourceLocation(stringResource(id = R.string.pratt_music_library), LatLng(42.253725458017755, -72.57415754906123)),
+        ResourceLocation(stringResource(id = R.string.counseling_service), LatLng(42.259079185785374, -72.57281870556443)),
+        ResourceLocation(stringResource(id = R.string.health_services_office), LatLng(42.259079185785374, -72.57281870556443)),
+        ResourceLocation(stringResource(id = R.string.financial_services_office), LatLng(42.25534214697941, -72.57613072477137))
     )
 
     Column(modifier = Modifier.fillMaxSize()) {
         TopAppBar(
-            title = { Text("Campus Map", fontWeight = FontWeight.Bold) },
+            title = { Text(stringResource(R.string.map_title), fontWeight = FontWeight.Bold) },
             navigationIcon = {
                 IconButton(onClick = { navController.popBackStack() }) {
                     Icon(

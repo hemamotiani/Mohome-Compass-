@@ -3,4 +3,15 @@
     <string name="tagline">Your guide to all campus resources</string>
     <string name="resources_button">Resources</string>
     <string name="map_button">Map</string>
+    <string name="resources_title">Resources</string>
+    <string name="dining_hall">Dining Hall</string>
+    <string name="williston_library">Williston Library</string>
+    <string name="gym">Gym</string>
+    <string name="counseling_service">Counseling Service</string>
+    <string name="health_services_office">Health Services Office</string>
+    <string name="financial_services_office">Financial Services Office</string>
+    <string name="registrars_office">Registrar\'s Office</string>
+    <string name="career_development_center">Career Development Center</string>
+    <string name="pratt_music_library">Pratt Music Library</string>
+    <string name="map_title">Campus Map</string>
 </resources>

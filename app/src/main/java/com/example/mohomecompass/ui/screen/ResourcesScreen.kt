@@ -17,31 +17,33 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.mohomecompass.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ResourcesScreen(navController: NavController) {
     val resources = listOf(
-        "Dining Hall",
-        "Williston Library",
-        "Gym",
-        "Counseling Service",
-        "Health Services Office",
-        "Financial Services Office",
-        "Registrar's Office",
-        "Career Development Center",
-        "Pratt Music Library"
+        stringResource(id = R.string.dining_hall),
+        stringResource(id = R.string.williston_library),
+        stringResource(id = R.string.gym),
+        stringResource(id = R.string.counseling_service),
+        stringResource(id = R.string.health_services_office),
+        stringResource(id = R.string.financial_services_office),
+        stringResource(id = R.string.registrars_office),
+        stringResource(id = R.string.career_development_center),
+        stringResource(id = R.string.pratt_music_library)
     )
 
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
         TopAppBar(
-            title = { Text("Resources", fontWeight = FontWeight.Bold) },
+            title = { Text(stringResource(R.string.resources_title), fontWeight = FontWeight.Bold) },
             navigationIcon = {
                 IconButton(onClick = { navController.popBackStack() }) {
                     Icon(
