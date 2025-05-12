@@ -22,7 +22,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyApp()
+            MohomeCompassTheme {
+                MyApp()
+            }
         }
     }
 }
@@ -35,7 +37,9 @@ fun MyApp() {
         composable("resources") { ResourcesScreen(navController) }
         composable("resource_detail/{resourceName}") { backStackEntry ->
             val resourceName = backStackEntry.arguments?.getString("resourceName")
-            ResourceDetailScreen(resourceName)
+            if (resourceName != null) {
+                ResourceDetailScreen(resourceName = resourceName, navController = navController)
+            }
         }
         composable("map") { MapScreen(navController) }
     }
