@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Mohome Compass</string>
-    <string name="tagline">Your guide to all campus resources</string>
+    <string name="tagline">Your guide to all campus resources!</string>
     <string name="resources_button">Resources</string>
     <string name="map_button">Map</string>
     <string name="resources_title">Resources</string>
-    <string name="dining_hall">Dining Hall</string>
-    <string name="williston_library">Williston Library</string>
-    <string name="gym">Gym</string>
+    <string name="dining_hall">Dining Commons</string>
+    <string name="williston_library">Library</string>
+    <string name="gym">Fitness Center</string>
     <string name="counseling_service">Counseling Service</string>
     <string name="health_services_office">Health Services Office</string>
     <string name="financial_services_office">Financial Services Office</string>
